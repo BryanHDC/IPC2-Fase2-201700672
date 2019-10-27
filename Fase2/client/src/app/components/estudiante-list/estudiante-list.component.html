@@ -1,0 +1,19 @@
+<div class="col-md-4" *ngFor="let estudiante of estudiantes">
+    <div class="card text-center">
+        <div class="card-header bg-success text-white  d-flex justify-content-between align-items-center">
+            {{estudiante.CarnetEstudiante}}
+        <button class="btn btn-danger" (click)="deleteEstudiante(estudiante.CarnetEstudiante)">
+            <i class="fas fa-trash-alt"></i>
+        </button>           
+        </div>
+        <div class="card-body">
+            <p>
+                {{estudiante.Nombre}}
+            </p>
+            <p>
+                {{estudiante.CorreoElectronico}}
+            </p>
+            <a [routerLink]="['/users/edit',estudiante.CarnetEstudiante]" class="btn btn-info btn-block" >Editar Estudiante</a>
+        </div>
+    </div>
+</div>

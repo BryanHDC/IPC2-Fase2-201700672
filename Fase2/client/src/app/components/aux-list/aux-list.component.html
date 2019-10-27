@@ -1,0 +1,22 @@
+<div class="col-md-4" *ngFor="let aux of auxs">
+    <div class="card text-center">
+        <div class="card-header bg-success text-white  d-flex justify-content-between align-items-center">
+            {{aux.CarnetAuxiliar}}
+        <button class="btn btn-danger" (click)="deleteAux(aux.CarnetAuxiliar)">
+            <i class="fas fa-trash-alt"></i>
+        </button>           
+        </div>
+        <div class="card-body">
+            <p>
+                {{aux.Nombre}}
+            </p>
+            <p>
+                {{aux.CorreoElectronico}}
+            </p>
+            <p>
+                {{aux.rol}}
+            </p>
+            <a [routerLink]="['/auxs/edit',aux.CarnetAuxiliar]" class="btn btn-info btn-block" >Editar Aux</a>
+        </div>
+    </div>
+</div>

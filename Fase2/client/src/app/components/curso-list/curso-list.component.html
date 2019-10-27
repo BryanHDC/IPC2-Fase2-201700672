@@ -1,0 +1,28 @@
+<div class="col-md-4" *ngFor="let curso of cursos">
+    <div class="card text-center">
+        <div class="card-header bg-success text-white  d-flex justify-content-between align-items-center">
+            {{curso.CodigoCurso}}
+        <button class="btn btn-danger" (click)="deleteCurso(curso.CodigoCurso)">
+            <i class="fas fa-trash-alt"></i>
+        </button>           
+        </div>
+        <div class="card-body">
+            <p>
+                {{curso.NombreCurso}}
+            </p>
+            <p>
+                {{curso.descripcion}}
+            </p>
+            <p>
+                {{curso.seccion}}
+            </p>
+            <p>
+                {{curso.CodigoHorario}}
+            </p>
+            <p>
+                {{curso.CodigoSemestre}}
+            </p>
+            <a [routerLink]="['/cursos/edit',curso.CodigoCurso]" class="btn btn-info btn-block" >Editar Estudiante</a>
+        </div>
+    </div>
+</div>

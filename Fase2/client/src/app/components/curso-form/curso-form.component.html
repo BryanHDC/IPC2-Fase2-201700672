@@ -1,0 +1,83 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 ">
+            <div class="card">
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label class="col-form-label" for="inputDefault">Codigo Curso</label>
+                            <input type="text" name="codigo" class="form-control" [(ngModel)]="curso.CodigoCurso" placeholder="Carnet" id="inputDefault">
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label" for="inputDefault">Nombre</label>
+                            <input type="text" name="nombre" class="form-control" [(ngModel)]="curso.NombreCurso" placeholder="Nombre" id="inputDefault">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleTextarea">Descripcion</label>
+                            <textarea class="form-control" name="descripcion" [(ngModel)]="curso.descripcion" id="exampleTextarea" rows="3"></textarea>
+                          </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">seccion</label>
+                            <input type="text" name="seccion"  class="form-control" [(ngModel)]="curso.seccion" id="exampleInputPassword1" placeholder="Seccion">
+                        </div>
+                        <div class="form-group" >
+                            <label for="exampleSelect2">Horario</label>
+                            <select [(ngModel)]="horario.CodigoHorario" name='horario' multiple="" class="form-control" id="exampleSelect2">
+                                <option *ngFor="let hora of horarios" [ngValue]="hora.CodigoHorario">{{hora.Hora}}</option>
+                            </select>
+                          </div>
+                          <div class="form-group" >
+                            <label for="exampleSelect2">Semestre</label>
+                            <select [(ngModel)]="semestre.CodigoSemestre" name="Semestre" multiple="" class="form-control" id="exampleSelect3">
+                                <option *ngFor="let sem of semestres" [ngValue]="sem.CodigoSemestre">{{sem.Nombre}}</option>
+                            </select>
+                          </div>
+                        <button class="btn btn-success btn-block" (click)="edit ? updateCurso() : saveNewCurso()">
+                            Guardar
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label class="col-form-label" for="inputDefault">Horario</label>
+                            <input type="text" name="codigo" class="form-control" [(ngModel)]="horario.Hora"  id="inputDefault">
+                        </div>
+                       
+                        <button class="btn btn-success btn-block" (click)="saveNewHorario()">
+                            Guardar
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label class="col-form-label" for="inputDefault">Numero</label>
+                            <input type="text" name="codigo" class="form-control" [(ngModel)]="semestre.Numero"  id="inputDefault">
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label" for="inputDefault">Año</label>
+                            <input type="text" name="codigo" class="form-control" [(ngModel)]="semestre.Anio"  id="inputDefault">
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label" for="inputDefault">Nombre</label>
+                            <input type="text" name="codigo" class="form-control" [(ngModel)]="semestre.Nombre"  id="inputDefault">
+                        </div>
+                        <button class="btn btn-success btn-block" (click)="saveNewSemestre()">
+                            Guardar
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
